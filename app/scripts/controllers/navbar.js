@@ -3,8 +3,17 @@
 angular.module('timeClockChallegeApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'Gender',
       'link': '/'
+    },{
+      'title': 'Surname',
+      'link': '/surname'
+    },{
+      'title': 'Pic',
+      'link': '/pic'
+    },{
+      'title': 'Time Clock',
+      'link': '/time_clock'
     }];
     
     $scope.isActive = function(route) {

@@ -2,7 +2,7 @@
 
 angular.module('timeClockChallegeApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $http.get('/api/oauth2/new').success(function(result) {
+    $http.get('/api/employees').success(function(result) {
       console.log(result);
     });
   });

@@ -1,3 +1,9 @@
 <div ng-include="'partials/navbar'"></div>
 
-<p>This is the surname view.</p>
+<h1>Last Name starts with...</h1>
+
+<div class="row">
+	<div class="col-md-1" ng-repeat="letter in letters">
+		<a href="/pic?surname={{letter}}">{{letter}}</a>
+	</div>
+</div>

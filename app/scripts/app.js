@@ -4,7 +4,8 @@ angular.module('timeClockChallegeApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'omr.directives'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

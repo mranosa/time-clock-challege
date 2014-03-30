@@ -2,6 +2,7 @@
 
 angular.module('timeClockChallegeApp')
 	.service('EmployeeService', function EmployeeService($http, $rootScope) {
+		var loadingStatus = true;
 		var employees = [];
 		var currCount = 0;
 		var EmployeeService = function() {
@@ -23,6 +24,7 @@ angular.module('timeClockChallegeApp')
 
 						if(currCount === arrayLength){
 							$rootScope.$broadcast('hide-loading');
+							loadingStatus = false;
 						}
 					});
 				}
@@ -30,10 +32,10 @@ angular.module('timeClockChallegeApp')
 		};
 
 		EmployeeService.prototype = {
-			show: function() {
-
+			getLoadingStatus: function() {
+				return loadingStatus;
 			}
-		}
+		};
 
 		return new EmployeeService();
 	});

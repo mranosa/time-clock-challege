@@ -22,7 +22,7 @@ angular.module('timeClockChallegeApp')
 						currCount += 1;
 						$rootScope.$broadcast('update-loading-message', 'loaded ' + currCount + ' of ' + arrayLength);
 
-						if(currCount === arrayLength){
+						if (currCount === arrayLength) {
 							$rootScope.$broadcast('hide-loading');
 							loadingStatus = false;
 						}
@@ -34,6 +34,14 @@ angular.module('timeClockChallegeApp')
 		EmployeeService.prototype = {
 			getLoadingStatus: function() {
 				return loadingStatus;
+			},
+			getAllEmployeesWhereSurnameStartsWith: function(letter) {
+				if(!letter){
+					letter = "a"
+				}
+				return _.filter(employees, function(employee) {
+					return employee.details.lastname.charAt(0).toLowerCase() === letter.toLowerCase();
+				});
 			}
 		};
 

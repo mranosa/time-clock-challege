@@ -2,7 +2,8 @@
 
 angular.module('timeClockChallegeApp')
   .controller('MainCtrl', function ($scope, $http) {
-    // $http.get('/api/employees').success(function(result) {
-    //   console.log(result);
-    // });
+  	$scope.employees = {};
+    $http.get('/api/employees').success(function(result) {
+    	$scope.employees = result.employees
+    });
   });

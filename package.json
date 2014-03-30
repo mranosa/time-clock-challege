@@ -5,7 +5,8 @@
     "express": "~3.4.3",
     "lodash": "~2.4.1",
     "ejs": "~0.8.4",
-    "oauth": "~0.9.11"
+    "oauth": "~0.9.11",
+    "node-rest-client": "~0.8.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

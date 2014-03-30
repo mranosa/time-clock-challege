@@ -2,4 +2,15 @@
 
 <h1>Select your pic ..</h1>
 
-{{employees}}
+<div class="row">
+	<div class="col-md-12">
+		<ul>
+			<li ng-repeat="employee in employees">
+				<a ng-click="selectEmployee(employee)">
+				{{employee.details.lastname}}, {{employee.details.firstname}}<br>
+				<img src="{{employee.details.avatar.profile}}" width="40" height="40">
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

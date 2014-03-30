@@ -35,12 +35,17 @@ angular.module('timeClockChallegeApp')
 			getLoadingStatus: function() {
 				return loadingStatus;
 			},
-			getAllEmployeesWhereSurnameStartsWith: function(letter) {
-				if(!letter){
-					letter = "a"
+			filterEmployees: function(letter, gender) {
+				if (!letter) {
+					letter = 'a';
 				}
 				return _.filter(employees, function(employee) {
-					return employee.details.lastname.charAt(0).toLowerCase() === letter.toLowerCase();
+					return employee.details.lastname.charAt(0).toLowerCase() === letter.toLowerCase() && employee.details.gender === gender;
+				});
+			},
+			getEmployee: function(id) {
+				return _.find(employees, function(employee) {
+					return employee.id === id;
 				});
 			}
 		};

@@ -6,7 +6,8 @@ angular.module('timeClockChallegeApp', [
   'ngSanitize',
   'ngRoute',
   'omr.directives',
-  'angular-underscore'
+  'angular-underscore',
+  'ngStorage'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

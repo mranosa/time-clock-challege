@@ -1,17 +1,17 @@
 <div ng-include="'partials/navbar'"></div>
-
 <h1>Is this you?</h1>
-
+{{employee.details.lastname}}, {{employee.details.firstname}}<br>
+<img src="{{employee.details.avatar.profile}}" width="40" height="40">
 <div class="row">
 	<div class="col-md-12 text-center">
 		<ng-camera
-		  type="photo"
-		  enabled="true"
-		  width="640"
-		  height="480"
-		  countdown="3"
-		  ng-model="media"
-		  capture="callback(media)"
-		  capture-message="Go!"></ng-camera>	
+		type="photo"
+		enabled="true"
+		width="640"
+		height="480"
+		countdown="3"
+		ng-model="media"
+		capture="callback(media)"
+		capture-message="Go!"></ng-camera>
 	</div>
 </div>

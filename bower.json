@@ -11,7 +11,9 @@
     "angular-cookies": "1.2.11",
     "angular-sanitize": "1.2.11",
     "angular-route": "1.2.11",
-    "angular-camera": "~0.1.2"
+    "angular-camera": "~0.1.2",
+    "underscore": "~1.6.0",
+    "angular-underscore": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.11",

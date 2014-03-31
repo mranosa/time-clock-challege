@@ -5,10 +5,12 @@ angular.module('timeClockChallegeApp')
 		var loadingStatus = true;
 		var employees = [];
 		var currCount = 0;
+		var currToken = '';
 		var EmployeeService = function() {
 			$http.get('/api/employees').success(function(result) {
 				var employeesData = result.employees;
 				var token = result.token;
+				currToken = token;
 
 				console.log(result);
 
@@ -46,6 +48,16 @@ angular.module('timeClockChallegeApp')
 			getEmployee: function(id) {
 				return _.find(employees, function(employee) {
 					return employee.id === id;
+				});
+			},
+			clockIn: function(id) {
+				return new Promise(function(resolve, reject) {
+					$http.get('/api/employee/clockIn?id=' + id + '&token=' + currToken + '&kindVal=clock_in').success(function(result) {
+						console.log(id);
+						resolve(result);
+					}).error(function(error){
+						reject(error);
+					});
 				});
 			}
 		};
